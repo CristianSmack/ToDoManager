@@ -12,14 +12,14 @@ import com.cristiandevs.todomanager.Model.ToDoItem;
  * Created by Cristian on 15/12/2017.
  */
 
-@Database(entities = {ToDoItem.class}, version = 1)
+@Database(entities = {ToDoItem.class}, version = 2)
 public abstract class ToDoItemDB extends RoomDatabase {
     private static ToDoItemDB database;
 
     //Singleton Pattern
     public static ToDoItemDB getInstance(Context context){
         if(database==null){
-            database = Room.databaseBuilder(context.getApplicationContext(),ToDoItemDB.class,"todoitem_db").build();
+            database = Room.databaseBuilder(context.getApplicationContext(),ToDoItemDB.class,"todoitem_db").fallbackToDestructiveMigration().allowMainThreadQueries().build();
         }
 
         return database;

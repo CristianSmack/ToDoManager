@@ -1,4 +1,4 @@
-package com.cristiandevs.todomanager;
+package com.cristiandevs.todomanager.Database;
 
 import android.arch.persistence.room.TypeConverter;
 
