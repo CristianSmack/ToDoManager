@@ -2,7 +2,6 @@ package com.cristiandevs.todomanager;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -18,7 +17,7 @@ import java.util.List;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class MainActivityFragment extends Fragment {
+public class MainActivityFragment extends android.app.Fragment {
     RecyclerView recyclerView;
     ItemAdapter adapter;
     View view;
@@ -39,7 +38,7 @@ public class MainActivityFragment extends Fragment {
         ToDoItemDB db = ToDoItemDB.getInstance(getActivity());
         ArrayList<ToDoItem> items = (ArrayList)db.toDoItemDAO().getAll();
 
-        adapter = new ItemAdapter(items);
+        adapter = new ItemAdapter(items,getActivity());
 
         recyclerView.setAdapter(adapter);
 

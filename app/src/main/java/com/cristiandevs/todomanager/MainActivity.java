@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
 
                 ToDoItemDB db = ToDoItemDB.getInstance(getApplicationContext());
-                ToDoItem item = new ToDoItem("Prueba","description",new Date(System.currentTimeMillis()),true);
+                ToDoItem item = new ToDoItem("Prueba","description",new Date(System.currentTimeMillis()),false);
 
                 db.toDoItemDAO().insertToDo(item);
             }

@@ -15,7 +15,7 @@ import java.util.List;
 
 @Dao
 public interface ToDoItemDAO {
-    @Query("SELECT * FROM ToDoItem")
+    @Query("SELECT * FROM ToDoItem WHERE done =0")
     List<ToDoItem> getAll();
 
     @Insert

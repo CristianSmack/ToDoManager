@@ -12,7 +12,7 @@ import com.cristiandevs.todomanager.Model.ToDoItem;
  * Created by Cristian on 15/12/2017.
  */
 
-@Database(entities = {ToDoItem.class}, version = 2)
+@Database(entities = {ToDoItem.class}, version = 3, exportSchema = false)
 public abstract class ToDoItemDB extends RoomDatabase {
     private static ToDoItemDB database;
 

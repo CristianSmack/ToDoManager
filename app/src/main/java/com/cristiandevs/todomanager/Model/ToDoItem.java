@@ -7,6 +7,7 @@ import android.arch.persistence.room.TypeConverters;
 
 import com.cristiandevs.todomanager.Database.DateConverter;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -15,15 +16,16 @@ import java.util.Date;
 
 @Entity(tableName = "ToDoItem")
 
-public class ToDoItem {
+public class ToDoItem implements Serializable{
 
     @PrimaryKey(autoGenerate = true)
     private Long id;
     private String name;
     private String description;
+    private boolean done;
+
     @TypeConverters(DateConverter.class)
     private Date date;
-    private boolean done;
 
     public ToDoItem(Long id, String name, String description, Date date,boolean done) {
         this.id = id;
